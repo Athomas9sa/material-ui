@@ -304,12 +304,6 @@ Der `style()` Helfer kann auch verwendet werden, um Eigenschaften Stilobjekten i
 
 {{"demo": "pages/system/basics/Variant.js", "defaultCodeOpen": true}}
 
-## CSS-Eigenschaft
-
-Dieser verarbeitet die `css` Eigenshaften. Dieser verarbeitet die `css` Eigenshaften.
-
-{{"demo": "pages/system/basics/CssProp.js", "defaultCodeOpen": true}}
-
 ## So funktioniert es
 
 styled-system hat hervorragende Arbeit geleistet im Erklären [wie es funktioniert](https://github.com/jxnblk/styled-system/blob/master/docs/how-it-works.md#how-it-works). Es kann dabei helfen, ein mentales Modell für dieses Konzept der "Stilfunktion" zu erstellen.
