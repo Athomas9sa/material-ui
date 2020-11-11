@@ -1,30 +1,30 @@
 ---
-title: React Date Picker component
+title: React Date Picker（日期选择器）组件
 components: DatePicker, PickersDay
 githubLabel: 'component: DatePicker'
 packageName: '@material-ui/lab'
 materialDesign: https://material.io/components/date-pickers
 ---
 
-# Date Picker
+# Date Picker 日期选择器
 
-<p class="description">Date pickers let the user select a date.</p>
+<p class="description">日期选择器可以让用户选择日期。</p>
 
-Date pickers let the user select a date. Date pickers are displayed with:
+日期选择器可以让用户选择日期。 该组件的显示方式如下：
 
-- Dialogs on mobile
-- Text field dropdowns on desktop
+- 手机端的对话框
+- 桌面端输入框的下拉列表中
 
 {{"component": "modules/components/ComponentLinkHeader.js"}}
 
 ## 要求
 
-This component relies on the date management library of your choice. It supports [date-fns](https://date-fns.org/), [luxon](https://moment.github.io/luxon/), [dayjs](https://github.com/iamkun/dayjs), [moment](https://momentjs.com/) and any other library via a public `dateAdapter` interface.
+该组件依赖于你所使用的日期管理库。 它支持 [date-fns](https://date-fns.org/)，[luxon](https://moment.github.io/luxon/)，[dayjs](https://github.com/iamkun/dayjs)，[moment](https://momentjs.com/) 以及其他任何使用公共 `dateAdapter` 接口的库。
 
-Please install any of these libraries and set up the right date engine by wrapping your root (or the highest level you wish the pickers to be available) with `LocalizationProvider`:
+请安装这些库中的任何一个，并使用 `LocalizationProvider` 来包裹到你的 root（或者包裹到该选择器你想要应用的最高位置）来设置正确的日期引擎。
 
 ```jsx
-// or @material-ui/lab/dateAdapter/{dayjs,luxon,moment} or any valid date-io adapter
+// 或者使用 @material-ui/lab/dateAdapter/{dayjs,luxon,moment} 或者使用任何有效的 date-io 适配器
 import DateFnsAdapter from '@material-ui/lab/dateAdapter/date-fns';
 import LocalizationProvider from '@material-ui/lab/LocalizationProvider';
 
@@ -37,67 +37,67 @@ function App() {
 }
 ```
 
-## Basic usage
+## 基本用法
 
-The date picker will be rendered as a modal dialog on mobile, and a textfield with a popover on desktop.
+日期选择器在移动端将以模态对话框的形式呈现，在桌面端将以弹出式文本输入框的形式呈现。
 
 {{"demo": "pages/components/date-picker/BasicDatePicker.js"}}
 
-## Responsiveness
+## 响应式
 
-The date picker component is designed and optimized for the device it runs on.
+日期选择器组件是为它所运行的设备而设计和优化的。
 
-- The "Mobile" version works best for touch devices and small screens.
-- The "Desktop" version works best for mouse devices and large screens.
+- “手机（Mobile）”版本最适合触控设备和小型屏幕。
+- “桌面（Mobile）”版本最适合鼠标设备和大型屏幕。
 
-By default, the `DatePicker` component uses a `@media (pointer: fine)` media query to determine which version to use. This can be customized with the `desktopModeMediaQuery` prop.
+默认情况下，`DatePicker` 组件使用 `@media (pointer: fine)` 这个媒体查询规则来确定使用哪个版本。 你也可以使用 `desktopModeMediaQuery` 属性来自定义它。
 
 {{"demo": "pages/components/date-picker/ResponsiveDatePickers.js"}}
 
 ## Localization 本地化
 
-Use `LocalizationProvider` to change the date-engine locale that is used to render the date picker. Here is an example of changing the locale for the `date-fns` adapter:
+你可以使用 `LocalizationProvider` 来改变用于渲染日期选择的 date-engine（日期引擎）本地化设置。 下面是一个更改 `date-fns` 适配器本地化设置的示例：
 
 {{"demo": "pages/components/date-picker/LocalizedDatePicker.js"}}
 
 ## Views playground
 
-It's possible to combine `year`, `month`, and `date` selection views. Views will appear in the order they're included in the `views` array.
+你可以将 `year`，`month` 和 `date` 进行组合显示。 视图的显示顺序是由被包含在 `views` 数组的顺序来决定的。
 
 {{"demo": "pages/components/date-picker/ViewsDatePicker.js"}}
 
-## Static mode
+## 静态模式
 
-It's possible to render any picker without the modal/popover and text field. This can be helpful when building custom popover/modal containers.
+它可以在没有模态框/弹出提示和文本输入框的情况下渲染选择器。 这样的话就可以帮助进一步定制弹出提示/模态框的容器。
 
 {{"demo": "pages/components/date-picker/StaticDatePickerDemo.js", "bg": true}}
 
-## Landscape orientation
+## 横竖方向
 
-For ease of use the date picker will automatically change the layout between portrait and landscape by subscription to the `window.orientation` change. You can force a specific layout using the `orientation` prop.
+为了方便使用，日期选择器将订阅 `window.orientation` 的改变，以便于自动在纵向和横向之间改变布局。 你可以使用 `orientation` 属性来强行指定布局。
 
 {{"demo": "pages/components/date-picker/StaticDatePickerLandscape.js", "bg": true}}
 
-## Sub-components
+## 子组件
 
-Some lower level sub-components (`DayPicker`, `MonthPicker` and `YearPicker`) are also exported. These are rendered without a wrapper or outer logic (masked input, date values parsing and validation, etc.).
+一些低级的子组件（`DayPicker`，`MonthPicker` 和 `YearPicker`）也被一同导出。 这些都是在没有包装器或外部逻辑（屏蔽输入、日期值解析和验证等）的情况下渲染的。
 
 {{"demo": "pages/components/date-picker/InternalPickers.js"}}
 
-## Custom input component
+## 自定义输入组件
 
-You can customize rendering of the input with the `renderInput` prop. Make sure to spread `ref` and `inputProps` correctly to the custom input component.
+你可以使用 `renderInput` 属性来定制输入组件的渲染。 请确保 `ref` 和 `inputProps` 都以正确的方式传入到所定制的输入组件。
 
 {{"demo": "pages/components/date-picker/CustomInput.js"}}
 
-## Customized day rendering
+## 自定义日期渲染
 
-The displayed days are customizable with the `renderDay` function prop. You can take advantage of the internal [PickersDay](/api/pickers-day) component.
+你可以通过 `renderDay` 函数属性来自定义所显示的日期。 你也可以利用内置的 [PickersDay](/api/pickers-day) 组件。
 
 {{"demo": "pages/components/date-picker/CustomDay.js"}}
 
-## Dynamic data
+## 动态数据
 
-Sometimes it may be necessary to display additional info right in the calendar. Here's an example of prefetching and displaying server-side data using the `onMonthChange`, `loading`, and `renderDay` props.
+有些时候可能有在日历中显示额外信息的需求。 下面是一个使用 `onMonthChange`、`loading` 和 `renderDay` 属性来预取并显示服务器端数据的例子。
 
 {{"demo": "pages/components/date-picker/ServerRequestDatePicker.js"}}
