@@ -85,7 +85,7 @@ Support for non-ref-forwarding class components in the `component` prop or as an
   +<Hidden mdDown>{...}</Hidden> // '@media (min-width:600px)'
   ```
 
-- The signature of `theme.palette.augmentColor` helper has changed:
+- A assinatura do utilitário `theme.palette.augmentColor` foi alterada:
 
   ```diff
   -theme.palette.augmentColor(red);
@@ -996,3 +996,17 @@ const classes = makeStyles(theme => ({
   -<Typography variant="srOnly">Create a user</Typography>
   +<Span>Create a user</Span>
   ```
+
+
+
+
+### Sistema
+
+- Replace `css` prop with `sx` to avoid collision with styled-components & emotion CSS props.
+
+
+
+```diff
+-<Box css={{ color: 'primary.main' }} />
++<Box sx={{ color: 'primary.main' }} />
+```
