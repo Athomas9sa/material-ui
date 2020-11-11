@@ -1,29 +1,30 @@
 ---
-title: React Date Range Picker component
+title: React Date Range Picker（日期范围选择器）组件
 components: DateRangePicker
 githubLabel: 'component: DateRangePicker'
 packageName: '@material-ui/lab'
 materialDesign: https://material.io/components/date-pickers
 ---
 
-# Date Range Picker [<span role="img" title="Enterprise">⚡️</span>](https://material-ui.com/store/items/material-ui-x/)
+# Date Range Picker [<span role="img" title="Enterprise">⚡️</span>](https://material-ui.com/store/items/material-ui-x/) 日期范围选择器
 
-<p class="description">Date pickers let the user select a range of dates.</p>
+<p class="description">日期选择器让用户选择一系列的日期。
+</p>
 
-> ⚠️⚠️ The date range picker is unstable, and **not suitable** for use in production. ⚠️⚠️ <br /><br /> The date range picker will be made available in the coming months for production use as part of a paid extension (commercial license) to the community edition (MIT license) of Material-UI. This paid extension will include advanced components (rich data grid, date range picker, tree view drag & drop, etc.). [Early access](https://material-ui.com/store/items/material-ui-x/) starts at an affordable price.
+> ⚠️⚠️ 该组件不是稳定版本，**不适用**于生产环境中。 ⚠️⚠️ <br /><br /> 日期范围选择将在今后的几个月内提供生产可用的稳定版本，并且作为 Material-UI 社区版本（MIT license）的付费扩展（商业许可）的一部分。 该付费扩展将包含高级组件（丰富的数据网格、日期范围选择器、可拖拽的树形视图 & drop 等等）。 你现在可以以实惠的价格 [提前使用](https://material-ui.com/store/items/material-ui-x/)。
 
-The date range pickers let the user select a range of dates.
+日期范围选择器让用户选择一个日期范围。
 
 {{"component": "modules/components/ComponentLinkHeader.js"}}
 
 ## 要求
 
-This component relies on the date management library of your choice. It supports [date-fns](https://date-fns.org/), [luxon](https://moment.github.io/luxon/), [dayjs](https://github.com/iamkun/dayjs), [moment](https://momentjs.com/) and any other library via a public `dateAdapter` interface.
+该组件依赖于你所使用的日期管理库。 它支持 [date-fns](https://date-fns.org/)，[luxon](https://moment.github.io/luxon/)，[dayjs](https://github.com/iamkun/dayjs)，[moment](https://momentjs.com/) 以及其他任何使用公共 `dateAdapter` 接口的库。
 
-Please install any of these libraries and set up the right date engine by wrapping your root (or the highest level you wish the pickers to be available) with `LocalizationProvider`:
+请安装这些库中的任何一个，并使用 `LocalizationProvider` 来包裹到你的 root（或者包裹到该选择器你想要应用的最高位置）来设置正确的日期引擎。
 
 ```jsx
-// or @material-ui/lab/dateAdapter/{dayjs,luxon,moment} or any valid date-io adapter
+// 或者使用 @material-ui/lab/dateAdapter/{dayjs,luxon,moment} 或者使用任何有效的 date-io 适配器
 import DateFnsAdapter from '@material-ui/lab/dateAdapter/date-fns';
 import LocalizationProvider from '@material-ui/lab/LocalizationProvider';
 
@@ -36,43 +37,43 @@ function App() {
 }
 ```
 
-## Basic usage
+## 基本用法
 
-Note that you can pass almost any prop from [DatePicker]('/api/date-picker/').
+请注意，你可以从 [DatePicker]('/api/date-picker/') 中传递几乎任何的属性。
 
 {{"demo": "pages/components/date-range-picker/BasicDateRangePicker.js"}}
 
-## Responsiveness
+## 响应式
 
-The date range picker component is designed to be optimized for the device it runs on.
+日期范围选择器组件是针对运行它的设备进行设计并优化的。
 
-- The "Mobile" version works best for touch devices and small screens.
-- The "Desktop" version works best for mouse devices and large screens.
+- “手机（Mobile）”版本最适合触控设备和小型屏幕。
+- “桌面（Mobile）”版本最适合鼠标设备和大型屏幕。
 
-By default, the `DateRangePicker` component uses a `@media (pointer: fine)` media query to determine which version to use. This can be customized with the `desktopModeMediaQuery` prop.
+默认情况下， `DateRangePicker` 组件使用 `@media (pointer: fine)` 媒体查询来确定使用哪个版本。 你也可以使用 `desktopModeMediaQuery` 属性来自定义它。
 
 {{"demo": "pages/components/date-range-picker/ResponsiveDateRangePicker.js"}}
 
-## Different number of months
+## 不同的月数
 
-Note that the `calendars` prop only works in desktop mode.
+请注意，`calendars` 属性仅运行在桌面端。
 
 {{"demo": "pages/components/date-range-picker/CalendarsDateRangePicker.js"}}
 
-## Disabling dates
+## 禁用日期
 
-Disabling dates behaves the same as the simple `DatePicker`.
+禁用日期的行为与 `DatePicker` 相同。
 
 {{"demo": "pages/components/date-range-picker/MinMaxDateRangePicker.js"}}
 
-## Custom input component
+## 自定义输入组件
 
-You can customize the rendered input with the `renderInput` prop. For `DateRangePicker` it takes **2** parameters – for start and end input respectively. If you need to render custom inputs make sure to spread `ref` and `inputProps` correctly to the input components.
+你可以使用 `renderInput` 属性来渲染自定义的输入。 对于 `DateRangePicker`，它需要**两个**参数 – 分别是开始和结束输入。 如果你需要渲染自定义的输入，请确保将 `ref` 和 `inputProps` 都正确地传入到输入组件中。
 
 {{"demo": "pages/components/date-range-picker/CustomDateRangeInputs.js"}}
 
-## Static mode
+## 静态模式
 
-It is possible to render any picker without a modal or popper. For this use `StaticDateRangePicker`.
+你可以在没有模态框或弹出提示的情况下渲染任何选择器。 为此你需要使用 `StaticDateRangePicker`。
 
 {{"demo": "pages/components/date-range-picker/StaticDateRangePicker.js"}}
