@@ -1,29 +1,29 @@
 ---
-title: React Date Time Picker component
+title: React Date Time Picker（日期时间选择器） 组件
 components: DateTimePicker
 githubLabel: 'component: DateTimePicker'
 packageName: '@material-ui/lab'
 materialDesign: https://material.io/components/date-pickers
 ---
 
-# Date Time Picker
+# Date Time Picker 日期时间选择器
 
-<p class="description">Combined date & time picker.</p>
+<p class="description">合并日期和时间选择。</p>
 
-This component combines the date & time pickers. It allows the user to select both date and time with the same control.
+该组件合并了日期 & 时间选择器。 它允许用户在一套控制逻辑下同时选择日期和时间。
 
-Note that this component is the [DatePicker](/components/date-picker/) and [TimePicker](/components/time-picker/) component combined, so any of these components' props can be passed to the DateTimePicker.
+请注意，该组件将 [DatePicker](/components/date-picker/) 和 [TimePicker](/components/time-picker/) 组件组合起来，所以这两个组件的任何属性都可以传递到日期时间选择内。
 
 {{"component": "modules/components/ComponentLinkHeader.js"}}
 
 ## 要求
 
-This component relies on the date management library of your choice. It supports [date-fns](https://date-fns.org/), [luxon](https://moment.github.io/luxon/), [dayjs](https://github.com/iamkun/dayjs), [moment](https://momentjs.com/) and any other library via a public `dateAdapter` interface.
+该组件依赖于你所使用的日期管理库。 它支持 [date-fns](https://date-fns.org/)，[luxon](https://moment.github.io/luxon/)，[dayjs](https://github.com/iamkun/dayjs)，[moment](https://momentjs.com/) 以及其他任何使用公共 `dateAdapter` 接口的库。
 
-Please install any of these libraries and set up the right date engine by wrapping your root (or the highest level you wish the pickers to be available) with `LocalizationProvider`:
+请安装这些库中的任何一个，并使用 `LocalizationProvider` 来包裹到你的 root（或者包裹到该选择器你想要应用的最高位置）来设置正确的日期引擎。
 
 ```jsx
-// or @material-ui/lab/dateAdapter/{dayjs,luxon,moment} or any valid date-io adapter
+// 或者使用 @material-ui/lab/dateAdapter/{dayjs,luxon,moment} 或者使用任何有效的 date-io 适配器
 import DateFnsAdapter from '@material-ui/lab/dateAdapter/date-fns';
 import LocalizationProvider from '@material-ui/lab/LocalizationProvider';
 
@@ -36,34 +36,34 @@ function App() {
 }
 ```
 
-## Basic usage
+## 基本用法
 
-Allows choosing date then time. There are 4 steps available (year, date, hour and minute), so tabs are required to visually distinguish date/time steps.
+该组件运行在选择时间之后再选择日期。 有 4 个步骤可供选择（年、日期、小时和分钟），所以需要用标签来直观地区分日期/时间步骤。
 
 {{"demo": "pages/components/date-time-picker/BasicDateTimePicker.js"}}
 
-## Responsiveness
+## 响应式
 
-The `DateTimePicker` component is designed and optimized for the device it runs on.
+`DateTimePicker` 组件为其运行的设备设计和优化。
 
-- The "Mobile" version works best for touch devices and small screens.
-- The "Desktop" version works best for mouse devices and large screens.
+- “手机（Mobile）”版本最适合触控设备和小型屏幕。
+- “桌面（Mobile）”版本最适合鼠标设备和大型屏幕。
 
-By default, the `DateTimePicker` component uses a `@media (pointer: fine)` media query to determine which version to use. This can be customized with the `desktopModeMediaQuery` prop.
+默认情况下， `DateTimePicker` 组件使用 `@media (pointer: fine)` 媒体查询来确定使用哪个版本。 你也可以使用 `desktopModeMediaQuery` 属性来自定义它。
 
 {{"demo": "pages/components/date-time-picker/ResponsiveDateTimePickers.js"}}
 
-## Date and time validation
+## 对日期和时间进行验证
 
-It is possible to restrict date and time selection in two ways:
+可以通过以下两种方式限制日期和时间的选择：
 
-- by using `minDateTime`/`maxDateTime` its possible to restrict time selection to before or after a particular moment in time
-- using `minTime`/`maxTime`, you can disable selecting times before or after a certain time each day respectively
+- 通过使用 `minDateTime`/`maxDateTime` 可以将时间选择限制在某一特定时刻之前或之后。
+- 使用 `minTime`/`maxTime`，你可以分别在每天的某个时间之前或之后禁止选择时间。
 
 {{"demo": "pages/components/date-time-picker/DateTimeValidation.js"}}
 
 ## Customization 个性化
 
-Here are some examples of heavily customized date & time pickers:
+以下是一些高度定制的日期 & 时间选择器的例子：
 
 {{"demo": "pages/components/date-time-picker/CustomDateTimePicker.js"}}
