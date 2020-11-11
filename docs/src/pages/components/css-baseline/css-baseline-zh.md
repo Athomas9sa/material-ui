@@ -61,9 +61,9 @@ export default function MyApp() {
 
 - 在 `<html>` 元素里面，我们将 `box-sizing` 全局设置为 `border-box`。 这样一来，包括 `*:: before` 和 `*:: after` 的每个元素，都会被声明来继承这个属性，这样能够确保元素的声明宽度永远不会超过 padding 或者 border。
 
-### Scrollbars
+### 滚动条
 
-In dark mode, the colors of the scrollbars are customized to provide a better contrast.
+在黑暗模式下，滚动条的颜色是定制的，以提供更好的对比度。
 
 ### 文字铸排
 
