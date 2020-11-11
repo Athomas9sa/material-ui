@@ -917,3 +917,12 @@ const classes = makeStyles(theme => ({
   -<Typography variant="srOnly">创建用户</Typography>
   +<Span>创建用户</Span>
   ```
+
+### System 系统
+
+- Replace `css` prop with `sx` to avoid collision with styled-components & emotion CSS props.
+
+```diff
+-<Box css={{ color: 'primary.main' }} />
++<Box sx={{ color: 'primary.main' }} />
+```
