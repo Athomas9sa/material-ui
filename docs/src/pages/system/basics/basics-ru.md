@@ -311,12 +311,6 @@ The `style()` helper can also be used to maps properties to style objects in a t
 
 {{"demo": "pages/system/basics/Variant.js", "defaultCodeOpen": true}}
 
-## Свойство CSS
-
-It will process the `css` property. It will process the `css` property.
-
-{{"demo": "pages/system/basics/CssProp.js", "defaultCodeOpen": true}}
-
 ## Как это работает
 
 styled-system has done a great job at [explaining how it works](https://github.com/jxnblk/styled-system/blob/master/docs/how-it-works.md#how-it-works). It can help building a mental model for this "style function" concept.
