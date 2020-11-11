@@ -306,12 +306,6 @@ A função auxiliar `style()` também pode ser usada para mapear propriedades pa
 
 {{"demo": "pages/system/basics/Variant.js", "defaultCodeOpen": true}}
 
-## Propriedade CSS
-
-Se você quiser suportar valores customizados de CSS, você pode usar o utilitário `css()`. Ele irá processar a propriedade `css`.
-
-{{"demo": "pages/system/basics/CssProp.js", "defaultCodeOpen": true}}
-
 ## Como funciona
 
 O styled-system fez um ótimo trabalho [explicando como ele funciona](https://github.com/jxnblk/styled-system/blob/master/docs/how-it-works.md#how-it-works). Ele pode ajudar a construir um modelo mental para esse conceito de "função de estilo".
