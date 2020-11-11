@@ -306,12 +306,6 @@ const palette = compose(textColor, bgcolor);
 
 {{"demo": "pages/system/basics/Variant.js", "defaultCodeOpen": true}}
 
-## CSS 属性
-
-如果您想要自定义 CSS 的值，您可以使用 `css()` 助手。 如果您想要自定义 CSS 的值，您可以使用 `css()` 助手。
-
-{{"demo": "pages/system/basics/CssProp.js", "defaultCodeOpen": true}}
-
 ## 工作原理
 
 styled-system 在 [解释它是如何工作的](https://github.com/jxnblk/styled-system/blob/master/docs/how-it-works.md#how-it-works) 方面做得很好 。 它可以协助为这种 “style function” 概念建立一个心理模型。
